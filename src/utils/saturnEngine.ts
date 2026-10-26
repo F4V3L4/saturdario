@@ -370,17 +370,17 @@ export function calculateTransitStatus(targetDate: Date = new Date()): TransitSt
   const rules = {
     canDeployNewFeatures: !isRetrograde,
     recommendedFocus: isRetrograde
-      ? 'Auditoria rigorosa, depuração de bugs, refatoração de código legado, congelamento de novos deploys e revisão financeira.'
-      : 'Avanço agressivo, lançamento de novos módulos, expansão de infraestrutura, assinatura de novos acordos e deploys em produção.',
+      ? 'Desacelere um pouco, organize o que ficou pendente, reveja seus planos e cuide do seu dinheiro.'
+      : 'Aproveite o momento para avançar com calma, começar algo novo e colocar seus planos em prática.',
     warningNote: isRetrograde
-      ? 'Fase Retrógrada: Não inicie arquiteturas não testadas. Foque na eliminação de débito técnico.'
-      : 'Fase Direta: Janela aberta para execução e consolidação de novos projetos.',
+      ? 'Este é um convite para olhar para dentro e fortalecer suas bases antes de dar o próximo passo.'
+      : 'O caminho está mais aberto para agir, experimentar e seguir com seus projetos.',
   };
 
   return {
     currentDate: targetDate.toISOString(),
     phase: isRetrograde ? 'RETRÓGRADO' : 'DIRETO',
-    phaseLabel: isRetrograde ? 'RETRÓGRADO (AUDITORIA / FREEZE)' : 'DIRETO (EXECUÇÃO / EXPANSÃO)',
+    phaseLabel: isRetrograde ? 'Saturno retrógrado' : 'Saturno em movimento direto',
     currentSign,
     currentDegree,
     eclipticLongitude,
@@ -396,7 +396,9 @@ export function calculateTransitStatus(targetDate: Date = new Date()): TransitSt
     daysUntilNextBirthday,
     nextBirthdayDate,
     ringTiltDeg,
-    operationalDirective: ephemeris.directive,
+    operationalDirective: isRetrograde
+      ? 'Talvez seja uma boa hora para desacelerar, rever seus planos e cuidar do que já está em andamento.'
+      : 'Você pode aproveitar este período para avançar com calma e colocar seus planos em prática.',
     rules,
   };
 }
@@ -408,8 +410,8 @@ export function getDefaultAuditTasks(): import('../types/saturn').AuditTask[] {
   return [
     {
       id: 'task-1',
-      title: 'Auditoria de Débito Técnico & Refatoração de Módulos Críticos',
-      description: 'Mapear e refatorar classes legadas, reduzir complexidade ciclomática e congelar merge de features não estáveis.',
+      title: 'Organizar o que ficou pendente',
+      description: 'Escolha uma tarefa antiga e dê um pequeno passo para deixá-la mais simples.',
       category: 'codigo',
       completed: true,
       priority: 'alta',
@@ -418,8 +420,8 @@ export function getDefaultAuditTasks(): import('../types/saturn').AuditTask[] {
     },
     {
       id: 'task-2',
-      title: 'Auditoria de Dependências & Segurança CVE',
-      description: 'Executar npm audit e revisar versões de pacotes contra vulnerabilidades conhecidas em todos os repositórios.',
+      title: 'Revisar seus projetos',
+      description: 'Veja o que está funcionando bem e o que pode ser melhorado sem pressa.',
       category: 'codigo',
       completed: false,
       priority: 'alta',
@@ -428,8 +430,8 @@ export function getDefaultAuditTasks(): import('../types/saturn').AuditTask[] {
     },
     {
       id: 'task-3',
-      title: 'Revisão Orçamentária & Corte de Custos de Cloud',
-      description: 'Auditar instâncias ociosas no Google Cloud, desativar storage obsoleto e calibrar alertas de billing para 2027.',
+      title: 'Olhar para seus gastos',
+      description: 'Confira suas despesas e escolha uma forma simples de cuidar melhor do seu dinheiro.',
       category: 'financas',
       completed: false,
       priority: 'alta',
@@ -438,8 +440,8 @@ export function getDefaultAuditTasks(): import('../types/saturn').AuditTask[] {
     },
     {
       id: 'task-4',
-      title: 'Backup Criptográfico Offline das Chaves & Repositórios',
-      description: 'Gerar cópias a frio (cold storage criptografado) de credenciais mestras, chaves GPG e repositórios prioritários.',
+      title: 'Guardar o que é importante',
+      description: 'Faça uma cópia segura de fotos, documentos e projetos que você não quer perder.',
       category: 'fundacoes',
       completed: true,
       priority: 'alta',
@@ -448,8 +450,8 @@ export function getDefaultAuditTasks(): import('../types/saturn').AuditTask[] {
     },
     {
       id: 'task-5',
-      title: 'Plano de Foco de Estudos em Ciência da Computação (2026-2027)',
-      description: 'Definir cronograma estruturado de arquitetura de sistemas, algoritmos e computação distribuída para o Retorno de Saturno.',
+      title: 'Escolher um assunto para estudar',
+      description: 'Separe um pouco de tempo para aprender algo que pode fazer diferença para você.',
       category: 'soberania',
       completed: false,
       priority: 'media',
@@ -458,8 +460,8 @@ export function getDefaultAuditTasks(): import('../types/saturn').AuditTask[] {
     },
     {
       id: 'task-6',
-      title: 'Limpeza de Ambientes Locais & Docker Prune',
-      description: 'Limpar containers, volumes órfãos e particionamento de disco de máquinas de desenvolvimento.',
+      title: 'Arrumar seu espaço',
+      description: 'Organize sua mesa, seus arquivos ou qualquer canto que esteja pedindo atenção.',
       category: 'fundacoes',
       completed: false,
       priority: 'baixa',

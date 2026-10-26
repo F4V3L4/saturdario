@@ -32,11 +32,11 @@ export const Header: React.FC<HeaderProps> = ({
   unreadNotificationsCount,
 }) => {
   const tabs = [
-    { id: 'dashboard', label: 'Monitoramento', icon: Compass },
-    { id: 'chat', label: 'Guardião IA', icon: Sparkles },
-    { id: 'audit', label: 'Auditoria & Refatoração', icon: CheckSquare },
-    { id: 'ephemeris', label: 'Matriz 2026–2045', icon: Table },
-    { id: 'notifications', label: 'Alertas & Push', icon: Bell, count: unreadNotificationsCount },
+    { id: 'dashboard', label: 'Visão geral', icon: Compass },
+    { id: 'chat', label: 'Conversa', icon: Sparkles },
+    { id: 'audit', label: 'Minha lista', icon: CheckSquare },
+    { id: 'ephemeris', label: 'Próximos anos', icon: Table },
+    { id: 'notifications', label: 'Lembretes', icon: Bell, count: unreadNotificationsCount },
   ];
 
   const currentDateObj = new Date(status.currentDate);
@@ -64,11 +64,11 @@ export const Header: React.FC<HeaderProps> = ({
                   SATURNO
                 </h1>
                 <span className="text-[11px] px-2 py-0.5 rounded-full font-mono-chrono bg-[#C5932A]/15 text-[#D4A43D] border border-[#C5932A]/30 font-semibold tracking-wide">
-                  GUARDIÃO DO TEMPO
+                  SEU GUIA PESSOAL
                 </span>
               </div>
               <p className="text-xs text-[#9CA3AF] font-sans">
-                Matriz de Engenharia Temporal <span className="text-white/20">•</span> Perfil Natal: 11/01/1998 (Áries)
+                Um espaço para acompanhar seus ciclos <span className="text-white/20">•</span> Nascimento: 11/01/1998
               </p>
             </div>
           </div>
@@ -111,7 +111,7 @@ export const Header: React.FC<HeaderProps> = ({
               <Calendar className="w-3.5 h-3.5 text-[#C5932A]" />
               <span>Data: {formattedDate}</span>
               <span className="text-[10px] bg-[#C5932A]/20 text-[#D4A43D] px-1.5 py-0.2 rounded font-semibold ml-1">
-                Ajustar
+                Mudar
               </span>
             </button>
           </div>

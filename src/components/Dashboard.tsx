@@ -108,7 +108,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
             </div>
 
             <h2 className="text-2xl sm:text-3xl font-bold text-[#F9FAFB] tracking-tight font-sans">
-              {isRetro ? 'MODO AUDITORIA & REFATORAÇÃO DE BASES' : 'MODO EXECUÇÃO & LANÇAMENTO DE SISTEMAS'}
+              {isRetro ? 'UM MOMENTO PARA REVER E CUIDAR' : 'UM MOMENTO PARA SEGUIR EM FRENTE'}
             </h2>
 
             <p className="text-sm sm:text-base text-[#9CA3AF] leading-relaxed font-sans">
@@ -121,7 +121,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
                 className="inline-flex items-center gap-2 px-5 py-3 rounded-[12px] bg-[#C5932A] hover:bg-[#D4A43D] active:scale-[0.98] text-[#0B132B] font-bold text-xs tracking-wider uppercase font-mono-chrono shadow-md shadow-[#C5932A]/20 transition-all"
               >
                 <Sparkles className="w-4 h-4 text-[#0B132B]" />
-                <span>Consultar Guardião IA</span>
+                <span>Conversar com meu guia</span>
               </button>
 
               <button
@@ -129,7 +129,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
                 className="inline-flex items-center gap-2 px-5 py-3 rounded-[12px] bg-[#16223B] hover:bg-[#1C2B4B] border border-white/10 hover:border-[#C5932A]/30 text-[#F9FAFB] text-xs tracking-wider uppercase font-mono-chrono transition-all"
               >
                 <CheckSquare className="w-4 h-4 text-[#C5932A]" />
-                <span>Abrir Checklist de Auditoria</span>
+                <span>Ver minha lista</span>
               </button>
             </div>
           </div>
@@ -138,7 +138,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
           <div className="w-full lg:w-auto bg-[#121C35]/95 backdrop-blur-xl rounded-[16px] border border-white/10 p-6 hig-card-shadow text-center lg:min-w-[280px]">
             <div className="flex items-center justify-center gap-2 text-xs font-mono-chrono text-[#9CA3AF] mb-3">
               <Clock className="w-4 h-4 text-[#C5932A]" />
-              <span className="tracking-wide">ESTAÇÃO {status.nextStationType} EM:</span>
+              <span className="tracking-wide">PRÓXIMA MUDANÇA EM:</span>
             </div>
 
             <div className="grid grid-cols-4 gap-2.5 my-2.5 text-center">
@@ -172,7 +172,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
               Data de Estação: <strong className="text-[#F9FAFB]">{status.nextStationDate}</strong>
             </div>
             <div className="text-[11px] text-[#D4A43D] mt-1 font-mono-chrono font-medium">
-              {isRetro ? 'Transição para Modo Direto' : 'Início do Ciclo de Auditoria'}
+              {isRetro ? 'Quando esse período terminar' : 'Começo de uma nova fase'}
             </div>
           </div>
         </div>
@@ -191,9 +191,9 @@ export const Dashboard: React.FC<DashboardProps> = ({
             <h3 className="text-sm font-semibold tracking-wide text-[#F9FAFB] uppercase font-mono-chrono flex items-center justify-between pb-4 border-b border-white/[0.08]">
               <span className="flex items-center gap-2">
                 <Activity className="w-4 h-4 text-[#C5932A]" />
-                Matriz de Ciclos Orbitais
+                Como estão seus ciclos
               </span>
-              <span className="text-xs text-[#9CA3AF] font-normal">Tempo Real</span>
+              <span className="text-xs text-[#9CA3AF] font-normal">Agora</span>
             </h3>
 
             <div className="space-y-5 pt-4">
@@ -202,7 +202,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
                 <div className="flex items-center justify-between text-xs font-mono-chrono">
                   <span className="text-[#F9FAFB] flex items-center gap-2">
                     <span className={`w-2 h-2 rounded-full ${isRetro ? 'bg-rose-400' : 'bg-emerald-400'}`} />
-                    Ciclo de Retrogradação Anual (~140d)
+                    Período de revisão do ano
                   </span>
                   <span className="text-[#D4A43D] font-bold">{status.retroProgressPct}%</span>
                 </div>
@@ -216,7 +216,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
                 </div>
                 <div className="flex justify-between text-[11px] font-mono-chrono text-[#9CA3AF]">
                   <span>Dia {status.retroDaysElapsed} de {status.retroTotalDays}</span>
-                  <span>{isRetro ? 'Auditoria em curso' : 'Fase direta ativa'}</span>
+                  <span>{isRetro ? 'Momento de rever' : 'Momento de agir'}</span>
                 </div>
               </div>
 
@@ -225,7 +225,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
                 <div className="flex items-center justify-between text-xs font-mono-chrono">
                   <span className="text-[#F9FAFB] flex items-center gap-2">
                     <span className="w-2 h-2 rounded-full bg-[#C5932A]" />
-                    1º Retorno de Saturno (29,5 Anos)
+                    Seu grande ciclo de amadurecimento
                   </span>
                   <span className="text-[#D4A43D] font-bold">{status.orbitalCycleProgressPct}%</span>
                 </div>
@@ -237,7 +237,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
                 </div>
                 <div className="flex justify-between text-[11px] font-mono-chrono text-[#9CA3AF]">
                   <span>Idade Atual: <strong className="text-[#F9FAFB]">{status.currentAgeYears} anos</strong></span>
-                  <span className="text-[#D4A43D] font-semibold">Janela 2026–2028 (Pico)</span>
+                  <span className="text-[#D4A43D] font-semibold">Fase mais marcante: 2026–2028</span>
                 </div>
               </div>
 
@@ -246,9 +246,9 @@ export const Dashboard: React.FC<DashboardProps> = ({
                 <div className="flex items-center justify-between text-xs font-mono-chrono">
                   <span className="text-[#F9FAFB] flex items-center gap-2">
                     <span className="w-2 h-2 rounded-full bg-sky-400" />
-                    Cruzamento dos Anéis (Ciclo 14,5 Anos)
+                    Um raro alinhamento dos anéis
                   </span>
-                  <span className="text-sky-300 font-bold">Edge-On ({status.ringTiltDeg.toFixed(1)}°)</span>
+                  <span className="text-sky-300 font-bold">Alinhamento ({status.ringTiltDeg.toFixed(1)}°)</span>
                 </div>
                 <div className="w-full bg-[#17233E] rounded-full h-2 overflow-hidden border border-white/5">
                   <div
@@ -257,8 +257,8 @@ export const Dashboard: React.FC<DashboardProps> = ({
                   />
                 </div>
                 <div className="flex justify-between text-[11px] font-mono-chrono text-[#9CA3AF]">
-                  <span>Alinhamento Raro: Anéis finos na Terra</span>
-                  <span className="text-[#F9FAFB]">2025/2026 Reestruturação</span>
+                  <span>Os anéis ficam quase de lado vistos da Terra</span>
+                  <span className="text-[#F9FAFB]">Uma fase de mudanças</span>
                 </div>
               </div>
 
@@ -267,7 +267,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
                 <div className="flex items-center justify-between text-xs font-mono-chrono">
                   <span className="text-[#F9FAFB] flex items-center gap-2">
                     <span className="w-2 h-2 rounded-full bg-[#C5932A]" />
-                    Revolução Anual Solar (11/Jan)
+                    Seu novo ano pessoal (11/Jan)
                   </span>
                   <span className="text-[#D4A43D] font-bold">{status.daysUntilNextBirthday} dias restantes</span>
                 </div>
@@ -279,7 +279,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
                 </div>
                 <div className="flex justify-between text-[11px] font-mono-chrono text-[#9CA3AF]">
                   <span>Próximo Alinhamento: {status.nextBirthdayDate}</span>
-                  <span className="text-[#D4A43D]">Emissão de Diretriz Anual</span>
+                  <span className="text-[#D4A43D]">Uma chance de escolher novos caminhos</span>
                 </div>
               </div>
             </div>
@@ -289,7 +289,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
           <div className="bg-[#121C35] border border-white/[0.08] rounded-[16px] p-6 hig-card-shadow space-y-3.5">
             <h3 className="text-xs font-semibold tracking-wider text-[#F9FAFB] uppercase font-mono-chrono flex items-center gap-2">
               <Layers className="w-4 h-4 text-[#C5932A]" />
-              Diretriz Operacional do Momento
+              O que pode ajudar agora
             </h3>
 
             <div className="space-y-2.5 text-xs font-mono-chrono">

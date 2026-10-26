@@ -201,14 +201,14 @@ ${completedTasks.map((t) => `- [x] ${t.title}`).join('\n')}
           <div>
             <div className="flex items-center gap-2.5">
               <h2 className="text-xl sm:text-2xl font-bold font-sans text-[#F9FAFB] tracking-tight">
-                CHECKLIST DE AUDITORIA & REFATORAÇÃO
+                MINHA LISTA DE CUIDADOS
               </h2>
               <span className="px-2.5 py-0.5 rounded-full text-xs font-mono-chrono bg-[#C5932A]/15 text-[#D4A43D] border border-[#C5932A]/30 font-semibold">
-                Módulo 4
+                Organização pessoal
               </span>
             </div>
             <p className="text-xs sm:text-sm text-[#9CA3AF] font-sans mt-1">
-              Ativação temporal de depuração de bugs, finanças, arquivos e integridade de sistemas.
+              Pequenos passos para organizar projetos, dinheiro, estudos e a rotina.
             </p>
           </div>
 
@@ -219,7 +219,7 @@ ${completedTasks.map((t) => `- [x] ${t.title}`).join('\n')}
               className="px-4 py-2.5 rounded-[12px] bg-[#C5932A] hover:bg-[#D4A43D] disabled:opacity-50 text-[#0B132B] font-bold font-mono-chrono text-xs uppercase tracking-wider flex items-center gap-2 shadow-md shadow-[#C5932A]/20 transition-all active:scale-[0.98]"
             >
               <Sparkles className="w-3.5 h-3.5 text-[#0B132B]" />
-              <span>{isGeneratingAI ? 'Gerando...' : 'Sugerir Tarefas com IA'}</span>
+              <span>{isGeneratingAI ? 'Pensando...' : 'Me dar algumas ideias'}</span>
             </button>
 
             <button
@@ -227,7 +227,7 @@ ${completedTasks.map((t) => `- [x] ${t.title}`).join('\n')}
               className="px-4 py-2.5 rounded-[12px] bg-[#16223B] hover:bg-[#1C2B4B] border border-white/10 hover:border-[#C5932A]/30 text-[#F9FAFB] text-xs font-mono-chrono font-bold uppercase tracking-wider flex items-center gap-1.5 transition-all"
             >
               <Plus className="w-3.5 h-3.5 text-[#C5932A]" />
-              <span>Nova Tarefa</span>
+              <span>Adicionar item</span>
             </button>
 
             <button
@@ -236,7 +236,7 @@ ${completedTasks.map((t) => `- [x] ${t.title}`).join('\n')}
               title="Copiar relatório formatado em Markdown"
             >
               {copiedReport ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5 text-[#9CA3AF]" />}
-              <span>{copiedReport ? 'Copiado!' : 'Relatório'}</span>
+              <span>{copiedReport ? 'Copiado!' : 'Resumo'}</span>
             </button>
           </div>
         </div>
@@ -246,7 +246,7 @@ ${completedTasks.map((t) => `- [x] ${t.title}`).join('\n')}
           <div className="flex items-center justify-between text-xs font-mono-chrono">
             <span className="text-[#F9FAFB] flex items-center gap-2 font-medium">
               <CheckCircle className="w-4 h-4 text-emerald-400" />
-              Conclusão da Auditoria da Janela ({completedCount} de {totalCount} concluídas)
+              Progresso da sua lista ({completedCount} de {totalCount} concluídas)
             </span>
             <span className="text-[#D4A43D] font-bold">{progressPct}%</span>
           </div>
@@ -271,7 +271,7 @@ ${completedTasks.map((t) => `- [x] ${t.title}`).join('\n')}
                 : 'text-[#9CA3AF] hover:text-[#F9FAFB] hover:bg-[#16223B]'
             }`}
           >
-            Todas ({tasks.length})
+            Tudo ({tasks.length})
           </button>
           <button
             onClick={() => setSelectedCategory('codigo')}
@@ -282,7 +282,7 @@ ${completedTasks.map((t) => `- [x] ${t.title}`).join('\n')}
             }`}
           >
             <FileCode className="w-3.5 h-3.5" />
-            <span>Código & Depuração</span>
+            <span>Projetos e estudos</span>
           </button>
           <button
             onClick={() => setSelectedCategory('financas')}
@@ -293,7 +293,7 @@ ${completedTasks.map((t) => `- [x] ${t.title}`).join('\n')}
             }`}
           >
             <DollarSign className="w-3.5 h-3.5" />
-            <span>Finanças & Custos</span>
+            <span>Dinheiro e gastos</span>
           </button>
           <button
             onClick={() => setSelectedCategory('fundacoes')}
@@ -304,7 +304,7 @@ ${completedTasks.map((t) => `- [x] ${t.title}`).join('\n')}
             }`}
           >
             <HardDrive className="w-3.5 h-3.5" />
-            <span>Infra & Backups</span>
+            <span>Casa e organização</span>
           </button>
           <button
             onClick={() => setSelectedCategory('soberania')}
@@ -315,7 +315,7 @@ ${completedTasks.map((t) => `- [x] ${t.title}`).join('\n')}
             }`}
           >
             <Shield className="w-3.5 h-3.5" />
-            <span>Soberania & CS</span>
+            <span>Autonomia e aprendizado</span>
           </button>
         </div>
 
@@ -343,7 +343,7 @@ ${completedTasks.map((t) => `- [x] ${t.title}`).join('\n')}
           <div className="p-12 text-center bg-[#121C35] rounded-[16px] border border-white/[0.08]">
             <CheckSquare className="w-8 h-8 text-[#9CA3AF] mx-auto mb-2 opacity-50" />
             <p className="text-sm font-mono-chrono text-[#9CA3AF]">
-              Nenhuma tarefa de auditoria encontrada para este filtro.
+              Nenhum item encontrado aqui.
             </p>
           </div>
         ) : (
@@ -460,10 +460,10 @@ ${completedTasks.map((t) => `- [x] ${t.title}`).join('\n')}
                     onChange={(e) => setNewCategory(e.target.value as AuditCategory)}
                     className="w-full px-3.5 py-2.5 bg-[#17233E] border border-white/10 rounded-[12px] text-[#F9FAFB] outline-none"
                   >
-                    <option value="codigo">Código & Depuração</option>
-                    <option value="financas">Finanças & Custos</option>
+                    <option value="codigo">Projetos e estudos</option>
+                    <option value="financas">Dinheiro e gastos</option>
                     <option value="fundacoes">Infraestrutura & Backups</option>
-                    <option value="soberania">Soberania & CS</option>
+                    <option value="soberania">Autonomia e aprendizado</option>
                   </select>
                 </div>
 

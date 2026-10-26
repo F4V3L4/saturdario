@@ -26,8 +26,8 @@ export default function App() {
     return [
       {
         id: 'notif-retrograde-active',
-        title: 'ESTAÇÃO RETRÓGRADA ATIVA // PROTOCOLO DE AUDITORIA',
-        message: 'Saturno retrógrado entre Áries e Peixes. Congele novas implementações e concentre o ciclo na eliminação de débito técnico.',
+        title: 'SATURNO RETRÓGRADO // UM MOMENTO PARA OLHAR COM CALMA',
+        message: 'Saturno está retrógrado entre Áries e Peixes. Este pode ser um bom momento para desacelerar, rever escolhas e cuidar do que já está em andamento.',
         type: 'phase_change',
         date: '26/10/2026',
         read: false,
@@ -35,17 +35,17 @@ export default function App() {
       },
       {
         id: 'notif-return-active',
-        title: '1º RETORNO DE SATURNO // JANELA DE CONSOLIDAÇÃO',
-        message: 'Você está no ciclo de maturidade do Retorno de Saturno (1998 -> 2026-2028). Momento de maior consolidação de autonomia profissional.',
+        title: 'SEU PRIMEIRO RETORNO DE SATURNO',
+        message: 'Você está vivendo uma fase importante de amadurecimento (1998 → 2026–2028), com espaço para entender melhor quem você é e o que quer construir.',
         type: 'phase_change',
         date: '20/10/2026',
         read: false,
-        badge: 'Retorno 29.5y',
+        badge: 'Retorno de Saturno',
       },
       {
         id: 'notif-annual-revolution',
-        title: 'REVOLUÇÃO DE 11 DE JANEIRO // ALINHAMENTO SOLAR',
-        message: 'Faltam 77 dias para o alinhamento anual Sol-Saturno. Planeje a auditoria anual de metas e finanças.',
+        title: '11 DE JANEIRO // SEU MOMENTO DE RECOMEÇO',
+        message: 'Faltam 77 dias para o seu próximo aniversário. Aproveite para pensar no que você quer levar para o próximo ano e no que pode deixar para trás.',
         type: 'annual_revolution',
         date: '15/10/2026',
         read: true,
@@ -145,18 +145,18 @@ export default function App() {
             <span className="text-white/40">/</span>
             <span className="text-[#F9FAFB] font-medium">Guardião do Tempo</span>
             <span className="text-white/20">|</span>
-            <span className="text-[#9CA3AF]">Engenharia Temporal & Auditoria</span>
+            <span className="text-[#9CA3AF]">Reflexões sobre tempo e escolhas</span>
           </div>
 
           <div className="flex flex-wrap items-center gap-3 text-[11px] font-mono-chrono text-[#9CA3AF]">
             <span className="px-2 py-0.5 rounded-full bg-[#16223B] border border-white/5">
-              Perfil: 11/01/1998
+              Nascimento: 11/01/1998
             </span>
             <span className="px-2 py-0.5 rounded-full bg-[#16223B] border border-white/5">
               Saturno em Áries (~13°45')
             </span>
             <span className="px-2 py-0.5 rounded-full bg-[#C5932A]/15 text-[#D4A43D] border border-[#C5932A]/30 font-semibold">
-              1º Retorno (2026–2028)
+              Uma fase importante (2026–2028)
             </span>
           </div>
         </div>

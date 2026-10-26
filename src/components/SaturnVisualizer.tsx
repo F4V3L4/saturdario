@@ -236,10 +236,10 @@ export const SaturnVisualizer: React.FC<SaturnVisualizerProps> = ({ status }) =>
           <Orbit className="w-5 h-5 text-[#C5932A] animate-spin" style={{ animationDuration: '30s' }} />
           <div>
             <h2 className="text-sm font-semibold tracking-wide text-[#F9FAFB] uppercase font-mono-chrono">
-              Saturno // Monitor Órbital
+              Saturno // Seu momento
             </h2>
             <p className="text-xs text-[#9CA3AF]">
-              Coordenadas Eclípticas & Dinâmica de Anéis
+              Uma imagem para acompanhar seus ciclos
             </p>
           </div>
         </div>
@@ -250,7 +250,7 @@ export const SaturnVisualizer: React.FC<SaturnVisualizerProps> = ({ status }) =>
             className="px-3 py-1.5 text-xs font-mono-chrono rounded-[12px] bg-[#17233E] hover:bg-[#1C2B4B] text-[#F9FAFB] hover:text-[#D4A43D] border border-white/10 transition-all shadow-sm"
             title="Alternar rotação do visualizador"
           >
-            {isRotating ? 'Pausar Visual' : 'Girar Visual'}
+            {isRotating ? 'Pausar animação' : 'Animar Saturno'}
           </button>
 
           <span

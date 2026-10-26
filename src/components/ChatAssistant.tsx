@@ -44,11 +44,11 @@ Como posso orientar a alocação do seu tempo, auditoria de sistemas ou decisõe
   const messagesEndRef = useRef<HTMLDivElement | null>(null);
 
   const quickPrompts = [
-    'Devo realizar um deploy de código agora em produção?',
-    'Como devo conduzir meu Primeiro Retorno de Saturno (2026-2028)?',
-    'Qual a diretriz para a Revolução Solar de 11 de Janeiro?',
-    'Como auditar débito técnico e segurança na fase retrógrada?',
-    'Quais as prioridades para a transição de Peixes para Áries em 2026/2027?',
+    'É um bom momento para colocar meu projeto no ar?',
+    'Como posso viver melhor esta fase importante (2026–2028)?',
+    'O que o dia 11 de janeiro pode representar para mim?',
+    'Como posso organizar melhor as coisas que deixei pendentes?',
+    'No que vale a pena prestar atenção nos próximos meses?',
   ];
 
   useEffect(() => {
@@ -164,14 +164,14 @@ Saturno encontra-se em **${status.phaseLabel}**. O fluxo está desimpedido para 
           <div>
             <div className="flex items-center gap-2">
               <h2 className="text-base font-bold text-[#F9FAFB] tracking-tight font-sans">
-                GUARDIÃO DE SATURNO
+                CONVERSA COM SEU GUIA
               </h2>
               <span className="text-[11px] px-2 py-0.5 rounded-full font-mono-chrono bg-[#C5932A]/15 text-[#D4A43D] border border-[#C5932A]/30 font-semibold">
-                Gemini 3.8 Flash
+                Assistente pessoal
               </span>
             </div>
             <p className="text-xs text-[#9CA3AF] font-sans">
-              Engenharia Temporal • Matriz de Ciclos 2026–2045 • Perfil 11/01/1998
+              Reflexões sobre seus ciclos • 2026–2045 • Nascimento em 11/01/1998
             </p>
           </div>
         </div>
@@ -185,7 +185,7 @@ Saturno encontra-se em **${status.phaseLabel}**. O fluxo está desimpedido para 
                 ? 'bg-[#C5932A]/20 text-[#D4A43D] border-[#C5932A]/40'
                 : 'bg-[#17233E] text-[#9CA3AF] border-white/5 hover:text-[#F9FAFB]'
             }`}
-            title={audioEnabled ? 'Desativar síntese de voz' : 'Ativar síntese de voz'}
+            title={audioEnabled ? 'Parar de ler as respostas' : 'Ler as respostas em voz alta'}
           >
             {audioEnabled ? <Volume2 className="w-4 h-4" /> : <VolumeX className="w-4 h-4" />}
           </button>
@@ -194,7 +194,7 @@ Saturno encontra-se em **${status.phaseLabel}**. O fluxo está desimpedido para 
           <button
             onClick={handleClear}
             className="p-2 rounded-[12px] bg-[#17233E] border border-white/5 text-[#9CA3AF] hover:text-rose-400 transition-all"
-            title="Limpar conversa"
+            title="Começar uma conversa nova"
           >
             <Trash2 className="w-4 h-4" />
           </button>
@@ -262,7 +262,7 @@ Saturno encontra-se em **${status.phaseLabel}**. O fluxo está desimpedido para 
             </div>
             <div className="bg-[#16223B] border border-white/[0.08] rounded-[16px] p-4 text-xs font-mono-chrono text-[#D4A43D] flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-[#C5932A] animate-ping" />
-              Calculando matriz de densidade temporal com Gemini 3.8 Flash...
+              Calculando matriz de densidade temporal com Assistente pessoal...
             </div>
           </div>
         )}

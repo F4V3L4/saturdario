@@ -23,29 +23,29 @@ export const TimeTravelModal: React.FC<TimeTravelModalProps> = ({
 
   const presets = [
     {
-      label: 'Hoje (26/Out/2026) • Retrógrado Ativo',
+      label: 'Hoje (26/out/2026) • Hora de olhar para dentro',
       date: '2026-10-26',
-      desc: 'Fase de auditoria e refatoração em Peixes/Áries.',
+      desc: 'Um momento para rever escolhas e cuidar do que já existe.',
     },
     {
-      label: 'Estação Direta (10/Dez/2026)',
+      label: '10/dez/2026 • Um novo movimento',
       date: '2026-12-10',
-      desc: 'Fim do retrógrado e liberação para novos deploys.',
+      desc: 'Fim de uma fase mais lenta e começo de novos passos.',
     },
     {
-      label: 'Revolução Solar (11/Jan/2027)',
+      label: '11/jan/2027 • Seu novo ano pessoal',
       date: '2027-01-11',
-      desc: 'Alinhamento Sol-Saturno anual (29 anos).',
+      desc: 'Uma oportunidade de pensar nos próximos 12 meses.',
     },
     {
-      label: 'Pico Retorno Saturno (15/Ago/2027)',
+      label: '15/ago/2027 • Um momento marcante',
       date: '2027-08-15',
       desc: 'Conjunção exata com Saturno Natal a ~13°45\' Áries.',
     },
     {
-      label: 'Transição Touro (01/Set/2028)',
+      label: '01/set/2028 • Mais estabilidade',
       date: '2028-09-01',
-      desc: 'Início da consolidação financeira e infraestrutura.',
+      desc: 'Um período para buscar mais segurança e equilíbrio.',
     },
   ];
 
@@ -71,7 +71,7 @@ export const TimeTravelModal: React.FC<TimeTravelModalProps> = ({
           <div className="flex items-center gap-2.5">
             <Clock className="w-5 h-5 text-[#C5932A]" />
             <h3 className="text-base font-bold font-sans text-[#F9FAFB] tracking-tight">
-              SIMULADOR DE COORDENADAS TEMPORAIS
+              ESCOLHA UMA DATA PARA EXPLORAR
             </h3>
           </div>
           <button
@@ -90,7 +90,7 @@ export const TimeTravelModal: React.FC<TimeTravelModalProps> = ({
         {/* Date Input Form */}
         <form onSubmit={handleApply} className="space-y-3.5 font-mono-chrono text-xs">
           <div>
-            <label className="block text-[#9CA3AF] mb-1.5 font-sans font-medium">Selecione uma Data Específica:</label>
+            <label className="block text-[#9CA3AF] mb-1.5 font-sans font-medium">Escolha uma data:</label>
             <input
               type="date"
               value={dateInput}
@@ -104,7 +104,7 @@ export const TimeTravelModal: React.FC<TimeTravelModalProps> = ({
               type="submit"
               className="flex-1 py-2.5 rounded-[12px] bg-[#C5932A] hover:bg-[#D4A43D] text-[#0B132B] font-bold uppercase tracking-wider transition-all shadow-sm active:scale-[0.98]"
             >
-              Aplicar Coordenada
+              Ver esta data
             </button>
             <button
               type="button"
@@ -121,7 +121,7 @@ export const TimeTravelModal: React.FC<TimeTravelModalProps> = ({
         {/* Presets List */}
         <div className="space-y-2 pt-3 border-t border-white/[0.08]">
           <span className="text-[11px] font-mono-chrono text-[#9CA3AF] uppercase tracking-wider block font-semibold">
-            Marcos Operacionais Recomendados:
+            Datas que podem ser interessantes:
           </span>
 
           <div className="space-y-2">

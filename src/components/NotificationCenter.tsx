@@ -136,14 +136,14 @@ export const NotificationCenter: React.FC<NotificationCenterProps> = ({
           <div>
             <div className="flex items-center gap-2.5">
               <h2 className="text-xl sm:text-2xl font-bold font-sans text-[#F9FAFB] tracking-tight">
-                SISTEMA DE NOTIFICAÇÕES INTELIGENTES
+                LEMBRETES PARA VOCÊ
               </h2>
               <span className="px-2.5 py-0.5 rounded-full text-xs font-mono-chrono bg-[#C5932A]/15 text-[#D4A43D] border border-[#C5932A]/30 font-semibold">
-                Módulo 2
+                Lembretes pessoais
               </span>
             </div>
             <p className="text-xs sm:text-sm text-[#9CA3AF] font-sans mt-1">
-              Alertas automatizados de mudança de estação, ingresso zodiacal e aniversário (11/Jan).
+              Receba avisos sobre mudanças de fase, datas importantes e seu aniversário.
             </p>
           </div>
 
@@ -162,7 +162,7 @@ export const NotificationCenter: React.FC<NotificationCenterProps> = ({
               title="Alternar sinal sonoro de alerta"
             >
               {soundEnabled ? <Volume2 className="w-4 h-4 text-[#D4A43D]" /> : <VolumeX className="w-4 h-4" />}
-              <span className="hidden sm:inline">Sinal Sonoro</span>
+              <span className="hidden sm:inline">Som dos lembretes</span>
             </button>
 
             {/* Browser push button */}
@@ -177,7 +177,7 @@ export const NotificationCenter: React.FC<NotificationCenterProps> = ({
             >
               <BellRing className="w-4 h-4" />
               <span>
-                {permission === 'granted' ? 'Push Ativado no Navegador' : 'Ativar Push Notificações'}
+                {permission === 'granted' ? 'Lembretes ativados' : 'Ativar lembretes'}
               </span>
             </button>
           </div>
@@ -186,7 +186,7 @@ export const NotificationCenter: React.FC<NotificationCenterProps> = ({
         {/* Simulation Triggers Bar */}
         <div className="mt-6 pt-5 border-t border-white/[0.08] space-y-2.5">
           <span className="text-xs font-mono-chrono text-[#9CA3AF] block font-semibold">
-            SIMULADOR DE EVENTOS OPERACIONAIS (TESTE EM TEMPO REAL):
+            TESTAR UM LEMBRETE:
           </span>
           <div className="flex flex-wrap gap-2.5">
             <button
@@ -194,7 +194,7 @@ export const NotificationCenter: React.FC<NotificationCenterProps> = ({
               className="px-3.5 py-2 rounded-[12px] bg-[#17233E] hover:bg-[#1E2D4E] border border-white/10 hover:border-rose-400/30 text-[#F9FAFB] text-xs font-mono-chrono flex items-center gap-2 transition-all"
             >
               <ShieldAlert className="w-3.5 h-3.5 text-rose-400" />
-              <span>Disparar Alerta de Mudança de Fase</span>
+              <span>Testar mudança de fase</span>
             </button>
 
             <button
@@ -202,7 +202,7 @@ export const NotificationCenter: React.FC<NotificationCenterProps> = ({
               className="px-3.5 py-2 rounded-[12px] bg-[#17233E] hover:bg-[#1E2D4E] border border-white/10 hover:border-sky-400/30 text-[#F9FAFB] text-xs font-mono-chrono flex items-center gap-2 transition-all"
             >
               <Compass className="w-3.5 h-3.5 text-sky-400" />
-              <span>Disparar Alerta de Ingresso Zodiacal</span>
+              <span>Testar mudança de signo</span>
             </button>
 
             <button
@@ -210,7 +210,7 @@ export const NotificationCenter: React.FC<NotificationCenterProps> = ({
               className="px-3.5 py-2 rounded-[12px] bg-[#17233E] hover:bg-[#1E2D4E] border border-white/10 hover:border-[#C5932A]/30 text-[#F9FAFB] text-xs font-mono-chrono flex items-center gap-2 transition-all"
             >
               <Flame className="w-3.5 h-3.5 text-[#C5932A]" />
-              <span>Disparar Relatório Anual (11/Jan)</span>
+              <span>Testar lembrete de aniversário</span>
             </button>
           </div>
         </div>
@@ -219,7 +219,7 @@ export const NotificationCenter: React.FC<NotificationCenterProps> = ({
       {/* Notification Stream */}
       <div className="space-y-3">
         <div className="flex items-center justify-between text-xs font-mono-chrono text-[#9CA3AF] px-1">
-          <span>Feed de Notificações Registradas ({notifications.length})</span>
+          <span>Seus lembretes ({notifications.length})</span>
           <button
             onClick={onMarkAllAsRead}
             className="text-[#D4A43D] hover:text-[#C5932A] transition-colors font-medium"
@@ -232,7 +232,7 @@ export const NotificationCenter: React.FC<NotificationCenterProps> = ({
           <div className="p-12 text-center bg-[#121C35] rounded-[16px] border border-white/[0.08]">
             <Bell className="w-8 h-8 text-[#9CA3AF] mx-auto mb-2 opacity-50" />
             <p className="text-sm font-mono-chrono text-[#9CA3AF]">
-              Nenhum alerta registrado no momento.
+              Você não tem lembretes por enquanto.
             </p>
           </div>
         ) : (
