@@ -96,7 +96,8 @@ export const AuditChecklist: React.FC<AuditChecklistProps> = ({ status }) => {
   const handleGenerateWithAI = async () => {
     setIsGeneratingAI(true);
     try {
-      const response = await fetch('/api/generate-audit', {
+      const apiBaseUrl = (import.meta.env.VITE_API_URL || '').replace(/\/$/, '');
+      const response = await fetch(`${apiBaseUrl}/api/generate-audit`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
