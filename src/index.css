@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-canvas: #0B132B;
+    --bg-surface: #121C35;
+    --bg-card: #17233E;
+    --bg-card-hover: #1C2B4B;
+    --accent-gold: #C5932A;
+    --accent-gold-hover: #D4A43D;
+    --accent-gold-subtle: rgba(197, 147, 42, 0.15);
+    --text-primary: #F9FAFB;
+    --text-secondary: #9CA3AF;
+    --border-subtle: rgba(197, 147, 42, 0.15);
+    --border-glass: rgba(255, 255, 255, 0.08);
+  }
+
+  body {
+    background-color: #0B132B;
+    color: #F9FAFB;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Inter', sans-serif;
+    letter-spacing: -0.02em;
+  }
+
+  .font-mono-chrono {
+    font-family: 'JetBrains Mono', monospace;
+    font-feature-settings: "tnum" 1, "zero" 1;
+  }
+}
+
+/* Big Tech Smooth Micro-Interactions */
+button, a, input, select, textarea {
+  transition: all 0.2s ease-in-out;
+}
+
+/* Material Design 3 / Apple HIG Diffused Shadow */
+.hig-card-shadow {
+  box-shadow: 0 12px 32px -4px rgba(0, 0, 0, 0.28), 0 4px 12px -2px rgba(0, 0, 0, 0.2);
+}
+
+.hig-elevated-shadow {
+  box-shadow: 0 20px 40px -8px rgba(0, 0, 0, 0.35), 0 8px 16px -4px rgba(0, 0, 0, 0.25);
+}
+
+.gold-glow-subtle {
+  box-shadow: 0 0 24px rgba(197, 147, 42, 0.18);
+}
+
+/* Ambient cosmic deep navy radial gradient */
+.cosmic-radial-glow {
+  background: radial-gradient(circle at 50% 10%, rgba(197, 147, 42, 0.08) 0%, rgba(16, 37, 66, 0.25) 45%, rgba(11, 19, 43, 0) 75%);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0B132B;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1E2D4E;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #C5932A;
+}
