@@ -6,3 +6,8 @@ coverage/
 *.log
 .env*
 !.env.example
+
+# Saturnario local/private knowledge data
+*.private.sqlite
+*.private.sqlite-*
+data/private/
