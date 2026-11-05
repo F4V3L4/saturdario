@@ -10,6 +10,7 @@ import { GoogleGenAI } from '@google/genai';
 import dotenv from 'dotenv';
 import { EPHEMERIS_DATA, USER_NATAL_PROFILE, calculateTransitStatus } from './src/utils/saturnEngine';
 import { TransitStatus } from './src/types/saturn';
+import { createKnowledgeRecord, listKnowledgeRecords, validateCreateRecord } from './src/server/knowledgeStore';
 
 dotenv.config();
 
@@ -173,6 +174,32 @@ Retorne EXCLUSIVAMENTE um JSON array no formato:
   } catch (error) {
     console.error('Erro ao gerar auditoria:', error);
     return res.status(500).json({ error: 'Falha ao gerar tarefas de auditoria.' });
+  }
+});
+
+// Private knowledge API. Keep this service behind trusted access controls before public deployment.
+app.get('/api/knowledge/records', async (req: Request, res: Response) => {
+  try {
+    const records = await listKnowledgeRecords({
+      domain: typeof req.query.domain === 'string' ? req.query.domain : undefined,
+      record_type: typeof req.query.type === 'string' ? req.query.type : undefined,
+      q: typeof req.query.q === 'string' ? req.query.q : undefined,
+    });
+    return res.json({ records });
+  } catch (error) {
+    console.error('Erro ao consultar base de conhecimento:', error);
+    return res.status(500).json({ error: 'Não foi possível consultar a base de conhecimento.' });
+  }
+});
+
+app.post('/api/knowledge/records', async (req: Request, res: Response) => {
+  try {
+    const input = validateCreateRecord(req.body);
+    const record = await createKnowledgeRecord(input);
+    return res.status(201).json({ record });
+  } catch (error) {
+    const message = error instanceof Error ? error.message : 'Dados inválidos.';
+    return res.status(400).json({ error: message });
   }
 });
 
