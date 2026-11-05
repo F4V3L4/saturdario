@@ -299,6 +299,61 @@ Não usar “possível” como sinônimo de “provável”. Não usar “não s
 
 **Conexões:** perguntas 1, 3, 4, 19 e 20.
 
+
+
+## 26. Por que vivemos como vivemos?
+
+**Resposta provisória:** a vida cotidiana resulta da interação entre biologia, história pessoal, família, cultura, economia, instituições, tecnologia, ambiente físico, relações e escolhas. Nenhuma dessas camadas explica tudo sozinha. Há hábitos e decisões individuais, mas também regras, incentivos e limitações que antecedem o indivíduo.
+
+**Possibilidades de explicação:**
+- necessidades e limites biológicos;
+- aprendizagem, hábitos e experiências;
+- normas culturais e expectativas sociais;
+- recursos, classe, trabalho e acesso a oportunidades;
+- instituições, leis e distribuição de poder;
+- contingências, acidentes e acontecimentos históricos;
+- decisões deliberadas e valores pessoais.
+
+**O que falta:** separar causas em escalas diferentes e estudar como se reforçam. Uma explicação útil deve mostrar mecanismos, não apenas apontar culpados ou repetir que “tudo é escolha” ou “tudo é estrutura”.
+
+**Conexões:** perguntas 7, 11, 13, 15, 16, 17 e 18.
+
+## 27. Quais partes da vida podem ser mudadas e como?
+
+**Resposta provisória:** algumas mudanças dependem principalmente de ações individuais; outras exigem apoio, recursos, coordenação coletiva ou transformação institucional. Muitas dependem de várias escalas ao mesmo tempo. A possibilidade de mudança não significa controle total.
+
+**Possibilidades de intervenção:**
+1. **Pessoal:** habilidades, hábitos, conhecimento, organização e escolhas.
+2. **Relacional:** comunicação, confiança, acordos e redes de apoio.
+3. **Organizacional:** processos, incentivos, liderança e cultura de trabalho.
+4. **Comunitária:** infraestrutura, cooperação, serviços e ação coletiva.
+5. **Institucional:** leis, políticas públicas, governança e distribuição de oportunidades.
+6. **Tecnológica e ambiental:** ferramentas, desenho de sistemas, energia, mobilidade e condições materiais.
+
+**Resposta prática candidata:** localizar o mecanismo que mantém o problema, identificar quem tem poder para alterá-lo e escolher uma intervenção proporcional, mensurável e segura.
+
+**O que falta:** construir estudos de caso que comparem intervenções individuais e estruturais, seus custos, efeitos indiretos e duração.
+
+**Conexões:** perguntas 6, 7, 11, 15, 16, 17 e 18.
+
+## 28. Como transformar a realidade sem se enganar sobre o próprio impacto?
+
+**Resposta provisória:** definir qual mudança se deseja produzir, para quem, em qual escala e em quanto tempo; estabelecer uma linha de base; identificar efeitos desejados e indesejados; medir resultados; ouvir quem é afetado; e revisar o método. Intenção positiva não garante consequência positiva.
+
+**Possibilidades:**
+- inovação técnica;
+- educação e produção de conhecimento;
+- empreendedorismo e criação de trabalho;
+- organização comunitária;
+- pesquisa e divulgação;
+- participação cívica e mudança institucional;
+- combinação de várias dessas formas.
+
+**O que falta:** estudar poder, incentivos, implementação, efeitos não intencionais e como distinguir impacto real de visibilidade, atividade ou reputação.
+
+**Conexões:** perguntas 6, 15, 16, 17, 18 e 27.
+
+
 ---
 
 # Parte II — Perguntas metodológicas que já aparecem no primeiro capítulo
