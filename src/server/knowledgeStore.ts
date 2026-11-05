@@ -164,6 +164,10 @@ export function createKnowledgeRecord(input: CreateRecordInput): Promise<Knowled
 }
 
 
+export class KnowledgeValidationError extends Error {
+  constructor(message: string) { super(message); this.name = 'KnowledgeValidationError'; }
+}
+
 export interface KnowledgeSource {
   id: string;
   title: string;
@@ -183,11 +187,11 @@ interface KnowledgeSeeds {
 
 export async function importKnowledgeSeeds(input: unknown): Promise<{ sources_added: number; records_added: number; sources_total: number; records_total: number }> {
   if (!input || typeof input !== 'object' || Array.isArray(input)) {
-    throw new Error('Arquivo de sementes inválido.');
+    throw new KnowledgeValidationError('Arquivo de sementes inválido.');
   }
   const seeds = input as Partial<KnowledgeSeeds>;
   if (typeof seeds.version !== 'string' || !Array.isArray(seeds.sources) || !Array.isArray(seeds.records)) {
-    throw new Error('Estrutura de sementes inválida: version, sources e records são obrigatórios.');
+    throw new KnowledgeValidationError('Estrutura de sementes inválida: version, sources e records são obrigatórios.');
   }
 
   const sourceIds = new Set<string>();
@@ -195,21 +199,21 @@ export async function importKnowledgeSeeds(input: unknown): Promise<{ sources_ad
     if (!source || typeof source !== 'object' || typeof source.id !== 'string' ||
         typeof source.title !== 'string' || typeof source.source_type !== 'string' ||
         typeof source.url !== 'string' || !/^https?:\\/\\//i.test(source.url)) {
-      throw new Error('Cada fonte precisa de id, título, tipo e URL HTTP(S) válidos.');
+      throw new KnowledgeValidationError('Cada fonte precisa de id, título, tipo e URL HTTP(S) válidos.');
     }
-    if (sourceIds.has(source.id)) throw new Error(`ID de fonte duplicado: ${source.id}`);
+    if (sourceIds.has(source.id)) throw new KnowledgeValidationError(`ID de fonte duplicado: ${source.id}`);
     sourceIds.add(source.id);
     return source;
   });
 
   const preparedRecords = seeds.records.map((raw) => {
     if (!raw || typeof raw !== 'object' || typeof raw.id !== 'string' || !raw.id.trim()) {
-      throw new Error('Cada registro-semente precisa de um ID estável.');
+      throw new KnowledgeValidationError('Cada registro-semente precisa de um ID estável.');
     }
     const inputRecord = validateCreateRecord(raw);
     const linkedSources = raw.sources === undefined ? [] : raw.sources;
     if (!Array.isArray(linkedSources) || linkedSources.some((id) => typeof id !== 'string' || !sourceIds.has(id))) {
-      throw new Error(`Referência de fonte inválida no registro ${raw.id}.`);
+      throw new KnowledgeValidationError(`Referência de fonte inválida no registro ${raw.id}.`);
     }
     return { id: raw.id, input: inputRecord, source_ids: linkedSources as string[] };
   });
