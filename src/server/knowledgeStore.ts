@@ -162,3 +162,83 @@ export function createKnowledgeRecord(input: CreateRecordInput): Promise<Knowled
   mutationQueue = operation.catch(() => undefined);
   return operation;
 }
+
+
+export interface KnowledgeSource {
+  id: string;
+  title: string;
+  source_type: string;
+  author?: string;
+  publisher?: string;
+  url?: string;
+  accessed_at?: string;
+  notes?: string;
+}
+
+interface KnowledgeSeeds {
+  version: string;
+  sources: KnowledgeSource[];
+  records: Array<Record<string, unknown>>;
+}
+
+export async function importKnowledgeSeeds(input: unknown): Promise<{ sources_added: number; records_added: number; sources_total: number; records_total: number }> {
+  if (!input || typeof input !== 'object' || Array.isArray(input)) {
+    throw new Error('Arquivo de sementes inválido.');
+  }
+  const seeds = input as Partial<KnowledgeSeeds>;
+  if (typeof seeds.version !== 'string' || !Array.isArray(seeds.sources) || !Array.isArray(seeds.records)) {
+    throw new Error('Estrutura de sementes inválida: version, sources e records são obrigatórios.');
+  }
+
+  const sourceIds = new Set<string>();
+  const validSources = seeds.sources.map((source) => {
+    if (!source || typeof source !== 'object' || typeof source.id !== 'string' ||
+        typeof source.title !== 'string' || typeof source.source_type !== 'string' ||
+        typeof source.url !== 'string' || !/^https?:\\/\\//i.test(source.url)) {
+      throw new Error('Cada fonte precisa de id, título, tipo e URL HTTP(S) válidos.');
+    }
+    if (sourceIds.has(source.id)) throw new Error(`ID de fonte duplicado: ${source.id}`);
+    sourceIds.add(source.id);
+    return source;
+  });
+
+  const preparedRecords = seeds.records.map((raw) => {
+    if (!raw || typeof raw !== 'object' || typeof raw.id !== 'string' || !raw.id.trim()) {
+      throw new Error('Cada registro-semente precisa de um ID estável.');
+    }
+    const inputRecord = validateCreateRecord(raw);
+    const linkedSources = raw.sources === undefined ? [] : raw.sources;
+    if (!Array.isArray(linkedSources) || linkedSources.some((id) => typeof id !== 'string' || !sourceIds.has(id))) {
+      throw new Error(`Referência de fonte inválida no registro ${raw.id}.`);
+    }
+    return { id: raw.id, input: inputRecord, source_ids: linkedSources as string[] };
+  });
+
+  const operation = mutationQueue.then(async () => {
+    const db = await readDatabase();
+    const existingSourceIds = new Set((db.sources ?? []).map((source) => source.id));
+    const existingRecordIds = new Set(db.records.map((record) => record.id));
+    const newSources = validSources.filter((source) => !existingSourceIds.has(source.id));
+    const now = new Date().toISOString();
+    const newRecords: KnowledgeRecord[] = preparedRecords
+      .filter((record) => !existingRecordIds.has(record.id))
+      .map((record) => ({
+        id: record.id,
+        ...record.input,
+        metadata: { ...(record.input.metadata ?? {}), source_ids: record.source_ids, imported_from_seed: true },
+        created_at: now,
+        updated_at: now,
+      }));
+    db.sources = [...(db.sources ?? []), ...newSources];
+    db.records.push(...newRecords);
+    await writeDatabase(db);
+    return {
+      sources_added: newSources.length,
+      records_added: newRecords.length,
+      sources_total: db.sources.length,
+      records_total: db.records.length,
+    };
+  });
+  mutationQueue = operation.catch(() => undefined);
+  return operation;
+}
