@@ -89,6 +89,173 @@
         "origin": "sintese_inicial",
         "requires_review": true
       }
+    },
+    {
+      "id": "q-reality-knowledge",
+      "record_type": "question",
+      "title": "Como distinguir realidade, percepção e interpretação?",
+      "body": "Construir um mapa entre observação, instrumentos, modelos, linguagem, memória e interpretação; investigar como cada camada pode introduzir erro.",
+      "domain": "epistemology",
+      "status": "exploring",
+      "confidence": "not_assessed",
+      "scope": "Conhecimento cotidiano e científico",
+      "limitations": "Não assumir que uma única teoria do conhecimento resolve todos os domínios."
+    },
+    {
+      "id": "q-time-physical-subjective",
+      "record_type": "question",
+      "title": "Como o tempo físico se relaciona com a experiência subjetiva do tempo?",
+      "body": "Separar tempo medido por relógios, ordem dos eventos, memória temporal e duração percebida; mapear teorias e evidências de cada nível.",
+      "domain": "time",
+      "status": "exploring",
+      "confidence": "not_assessed",
+      "scope": "Física, neurociência e experiência humana",
+      "limitations": "Não confundir metáforas psicológicas com propriedades físicas."
+    },
+    {
+      "id": "q-human-biology",
+      "record_type": "question",
+      "title": "Quais sistemas biológicos mais condicionam energia, saúde e capacidade de agir?",
+      "body": "Investigar sono, metabolismo, sistema nervoso, movimento, alimentação, imunidade e ambiente, incluindo interações entre eles.",
+      "domain": "biology",
+      "status": "exploring",
+      "confidence": "not_assessed",
+      "scope": "Biologia humana ao longo da vida",
+      "limitations": "Não transformar médias populacionais em diagnóstico individual."
+    },
+    {
+      "id": "q-sleep-performance",
+      "record_type": "question",
+      "title": "Como sono e ritmos circadianos afetam aprendizagem e desempenho?",
+      "body": "Reunir evidências sobre duração, regularidade, luz, horários, memória, atenção e recuperação; distinguir associação de causalidade.",
+      "domain": "health_science",
+      "status": "exploring",
+      "confidence": "not_assessed",
+      "scope": "Adultos e variação individual",
+      "limitations": "Não substituir avaliação clínica nem recomendar intervenções arriscadas."
+    },
+    {
+      "id": "q-emotion-decision",
+      "record_type": "question",
+      "title": "Como emoções participam da tomada de decisão?",
+      "body": "Investigar emoções como sinais, avaliações, impulsos e estados corporais; mapear quando ajudam, distorcem ou aceleram decisões.",
+      "domain": "psychology",
+      "status": "exploring",
+      "confidence": "not_assessed",
+      "scope": "Decisões cotidianas e sociais",
+      "limitations": "Evitar tratar razão e emoção como sistemas totalmente separados."
+    },
+    {
+      "id": "q-habit-behavior",
+      "record_type": "question",
+      "title": "Como hábitos se formam e como podem ser modificados?",
+      "body": "Investigar pistas, recompensas, repetição, contexto, fricção, identidade e recaídas; comparar intervenções de baixo risco.",
+      "domain": "behavior",
+      "status": "exploring",
+      "confidence": "not_assessed",
+      "scope": "Comportamentos cotidianos",
+      "limitations": "Não presumir que força de vontade explique todos os comportamentos."
+    },
+    {
+      "id": "q-learning-methods",
+      "record_type": "question",
+      "title": "Quais métodos de aprendizagem produzem retenção e transferência?",
+      "body": "Comparar recuperação ativa, prática espaçada, interleaving, explicação, projetos e feedback em diferentes tipos de conhecimento.",
+      "domain": "learning",
+      "status": "exploring",
+      "confidence": "not_assessed",
+      "scope": "Aprendizagem formal e autodidata",
+      "limitations": "O método mais eficaz depende da habilidade, do nível e do objetivo."
+    },
+    {
+      "id": "q-social-cooperation",
+      "record_type": "question",
+      "title": "Quais condições favorecem cooperação e confiança entre pessoas?",
+      "body": "Investigar reciprocidade, reputação, instituições, comunicação, normas, incentivos e resolução de conflitos.",
+      "domain": "society",
+      "status": "exploring",
+      "confidence": "not_assessed",
+      "scope": "Grupos, comunidades e organizações",
+      "limitations": "Resultados variam entre culturas, escalas e contextos históricos."
+    },
+    {
+      "id": "q-economic-opportunity",
+      "record_type": "question",
+      "title": "Como conhecimento, capital, redes e instituições influenciam oportunidades econômicas?",
+      "body": "Mapear mecanismos de criação de valor, produtividade, acesso a recursos, risco, desigualdade e mobilidade econômica.",
+      "domain": "economics",
+      "status": "exploring",
+      "confidence": "not_assessed",
+      "scope": "Indivíduos, empresas e sociedades",
+      "limitations": "Não reduzir resultados econômicos a mérito individual nem a uma causa única."
+    },
+    {
+      "id": "q-technology-power",
+      "record_type": "question",
+      "title": "Como tecnologias redistribuem poder, autonomia e dependência?",
+      "body": "Examinar propriedade, interoperabilidade, vigilância, concentração, custos de troca, acesso e capacidade de auditoria.",
+      "domain": "technology",
+      "status": "exploring",
+      "confidence": "not_assessed",
+      "scope": "Tecnologias digitais e infraestruturas",
+      "limitations": "Avaliar efeitos concretos em vez de classificar tecnologia como boa ou ruim por natureza."
+    },
+    {
+      "id": "q-ecological-limits",
+      "record_type": "question",
+      "title": "Quais limites ecológicos condicionam a continuidade das sociedades?",
+      "body": "Investigar energia, água, solo, biodiversidade, clima, materiais e ciclos de regeneração; relacionar escalas locais e globais.",
+      "domain": "ecology",
+      "status": "exploring",
+      "confidence": "not_assessed",
+      "scope": "Sistemas socioecológicos",
+      "limitations": "Distinguir limites medidos, cenários e escolhas políticas."
+    },
+    {
+      "id": "h-environment-friction",
+      "record_type": "hypothesis",
+      "title": "O desenho do ambiente altera a probabilidade de certos comportamentos",
+      "body": "Hipótese exploratória: reduzir fricção para ações desejadas e aumentar fricção para distrações pode mudar a frequência de comportamentos.",
+      "domain": "behavior",
+      "status": "draft",
+      "confidence": "not_assessed",
+      "scope": "Ambientes domésticos e de trabalho",
+      "method": "Definir comportamento observável, medir linha de base e comparar pequenas mudanças reversíveis",
+      "limitations": "Efeitos podem ser pequenos, contextuais ou compensados por outros fatores."
+    },
+    {
+      "id": "h-systems-feedback",
+      "record_type": "hypothesis",
+      "title": "Sistemas com feedback claro tendem a corrigir desvios mais cedo",
+      "body": "Hipótese exploratória: ciclos curtos de observação, comparação com metas e correção podem melhorar sistemas pessoais e organizacionais.",
+      "domain": "systems",
+      "status": "draft",
+      "confidence": "not_assessed",
+      "scope": "Projetos, aprendizagem e processos",
+      "method": "Comparar ciclos com e sem feedback usando indicadores definidos previamente",
+      "limitations": "Feedback ruim, atrasado ou excessivo pode piorar o desempenho."
+    },
+    {
+      "id": "p-reversible-experiments",
+      "record_type": "principle",
+      "title": "Prefira experimentos pequenos e reversíveis quando a incerteza é alta",
+      "body": "Princípio candidato: antes de comprometer recursos elevados, teste a hipótese com a menor intervenção segura capaz de produzir informação útil.",
+      "domain": "decision_making",
+      "status": "draft",
+      "confidence": "not_assessed",
+      "scope": "Projetos e decisões com incerteza",
+      "limitations": "Nem toda decisão pode ser revertida; riscos graves exigem prevenção e conhecimento especializado."
+    },
+    {
+      "id": "p-models-are-maps",
+      "record_type": "principle",
+      "title": "Use modelos como mapas, não como o próprio território",
+      "body": "Princípio candidato: todo modelo seleciona variáveis e simplifica a realidade; registre seu propósito, limites e condições em que deixa de funcionar.",
+      "domain": "epistemology",
+      "status": "draft",
+      "confidence": "not_assessed",
+      "scope": "Pesquisa, planejamento e interpretação",
+      "limitations": "A simplificação é necessária; o objetivo é torná-la explícita e adequada ao uso."
     }
   ]
 }
