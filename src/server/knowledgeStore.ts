@@ -1,5 +1,5 @@
 import { randomUUID } from 'node:crypto';
-import { mkdir, readFile, writeFile } from 'node:fs/promises';
+import { mkdir, readFile, rename, unlink, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 
 export type RecordType =
@@ -68,10 +68,10 @@ async function writeDatabase(data: KnowledgeFile): Promise<void> {
   await mkdir(path.dirname(file), { recursive: true });
   const temporary = file + '.tmp';
   await writeFile(temporary, JSON.stringify(data, null, 2) + '\n', { mode: 0o600 });
-  await writeFile(file, JSON.stringify(data, null, 2) + '\n', { mode: 0o600 });
-  // The temporary file is intentionally retained only during a successful write.
-  const { unlink } = await import('node:fs/promises');
-  await unlink(temporary).catch(() => undefined);
+  await rename(temporary, file).catch(async (error) => {
+    await unlink(temporary).catch(() => undefined);
+    throw error;
+  });
 }
 
 export interface CreateRecordInput {
