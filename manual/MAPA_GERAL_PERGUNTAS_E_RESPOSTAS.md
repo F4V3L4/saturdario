@@ -4,6 +4,8 @@
 **Data:** 2026-11-05  
 **Função:** consolidar as perguntas já abertas no Saturnário, apresentar respostas provisórias, alternativas explicativas, relações entre temas e lacunas de investigação.
 
+> **Síntese integrada concluída nesta etapa:** consulte também [Síntese integrada — respostas, cruzamentos e conclusões provisórias](SINTESE_INTEGRADA_E_CONCLUSOES.md), que reúne as cinco perguntas-mãe, cruza os domínios, atualiza os temas de tempo, emoção, hábitos, IA, economia, ecologia, Saturno e padrões físicos, e apresenta conclusões e limites.
+
 > Este documento é um mapa de estudo, não um catecismo nem uma lista de verdades definitivas. “Resposta provisória” significa a melhor síntese disponível neste momento, dentro do escopo indicado. “Possibilidades” são explicações concorrentes ou complementares que ainda precisam ser comparadas. Uma hipótese pode ser fértil sem ser verdadeira.
 
 ## Como ler este mapa
