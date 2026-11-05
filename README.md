@@ -31,3 +31,5 @@ Materiais de apoio:
 - [Metodologia de evidências](docs/saturnario/METODOLOGIA.md)
 
 O mapa é uma síntese em evolução: respostas provisórias não são verdades finais, hipóteses permanecem identificadas como hipóteses e lacunas de pesquisa são registradas explicitamente.
+
+- **Síntese integrada e conclusões:** [manual/SINTESE_INTEGRADA_E_CONCLUSOES.md](manual/SINTESE_INTEGRADA_E_CONCLUSOES.md) — cruzamento dos temas, respostas integradas e conclusões provisórias.
