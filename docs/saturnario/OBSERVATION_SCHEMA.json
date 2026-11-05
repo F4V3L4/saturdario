@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Saturnario Observation",
+  "type": "object",
+  "required": ["id", "title", "recorded_at", "origin", "description"],
+  "properties": {
+    "id": {"type": "string", "minLength": 1},
+    "title": {"type": "string", "minLength": 1},
+    "recorded_at": {"type": "string", "format": "date-time"},
+    "origin": {"enum": ["project_observation", "personal_experience", "experiment", "external_dataset", "documented_report"]},
+    "description": {"type": "string", "minLength": 1},
+    "domain": {"type": "array", "items": {"type": "string"}},
+    "method": {"type": "string"},
+    "sample": {"type": ["string", "null"]},
+    "variables": {"type": "array", "items": {"type": "string"}},
+    "measurement": {"type": ["object", "null"]},
+    "limitations": {"type": "array", "items": {"type": "string"}},
+    "source_ids": {"type": "array", "items": {"type": "string"}},
+    "related_claim_ids": {"type": "array", "items": {"type": "string"}},
+    "privacy": {"enum": ["public", "private", "sensitive"]},
+    "notes": {"type": "string"}
+  },
+  "additionalProperties": false
+}
