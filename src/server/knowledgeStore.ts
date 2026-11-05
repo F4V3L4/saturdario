@@ -206,11 +206,19 @@ export async function importKnowledgeSeeds(input: unknown): Promise<{ sources_ad
     return source;
   });
 
+  const recordIds = new Set<string>();
   const preparedRecords = seeds.records.map((raw) => {
     if (!raw || typeof raw !== 'object' || typeof raw.id !== 'string' || !raw.id.trim()) {
       throw new KnowledgeValidationError('Cada registro-semente precisa de um ID estável.');
     }
-    const inputRecord = validateCreateRecord(raw);
+    if (recordIds.has(raw.id)) throw new KnowledgeValidationError(`ID de registro duplicado: ${raw.id}`);
+    recordIds.add(raw.id);
+    let inputRecord: CreateRecordInput;
+    try {
+      inputRecord = validateCreateRecord(raw);
+    } catch (error) {
+      throw new KnowledgeValidationError(error instanceof Error ? error.message : 'Registro-semente inválido.');
+    }
     const linkedSources = raw.sources === undefined ? [] : raw.sources;
     if (!Array.isArray(linkedSources) || linkedSources.some((id) => typeof id !== 'string' || !sourceIds.has(id))) {
       throw new KnowledgeValidationError(`Referência de fonte inválida no registro ${raw.id}.`);
