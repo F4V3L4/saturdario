@@ -10,7 +10,8 @@ import { GoogleGenAI } from '@google/genai';
 import dotenv from 'dotenv';
 import { EPHEMERIS_DATA, USER_NATAL_PROFILE, calculateTransitStatus } from './src/utils/saturnEngine';
 import { TransitStatus } from './src/types/saturn';
-import { createKnowledgeRecord, listKnowledgeRecords, validateCreateRecord } from './src/server/knowledgeStore';
+import { createKnowledgeRecord, importKnowledgeSeeds, KnowledgeValidationError, listKnowledgeRecords, validateCreateRecord } from './src/server/knowledgeStore';
+import { readFile } from 'node:fs/promises';
 
 dotenv.config();
 
@@ -201,13 +202,40 @@ app.get('/api/knowledge/records', requireKnowledgeToken, async (req: Request, re
 });
 
 app.post('/api/knowledge/records', requireKnowledgeToken, async (req: Request, res: Response) => {
+  let input;
   try {
-    const input = validateCreateRecord(req.body);
-    const record = await createKnowledgeRecord(input);
-    return res.status(201).json({ record });
+    input = validateCreateRecord(req.body);
   } catch (error) {
     const message = error instanceof Error ? error.message : 'Dados inválidos.';
     return res.status(400).json({ error: message });
+  }
+  try {
+    const record = await createKnowledgeRecord(input);
+    return res.status(201).json({ record });
+  } catch (error) {
+    console.error('Erro ao gravar registro de conhecimento:', error);
+    return res.status(500).json({ error: 'Não foi possível gravar o registro.' });
+  }
+});
+
+app.post('/api/knowledge/import-seeds', requireKnowledgeToken, async (_req: Request, res: Response) => {
+  let seeds: unknown;
+  try {
+    const raw = await readFile(path.resolve(process.cwd(), 'docs/saturnario/knowledge/SEEDS.json'), 'utf8');
+    seeds = JSON.parse(raw);
+  } catch (error) {
+    console.error('Erro ao ler arquivo de sementes:', error);
+    return res.status(500).json({ error: 'Não foi possível ler o arquivo de sementes.' });
+  }
+  try {
+    const result = await importKnowledgeSeeds(seeds);
+    return res.json({ imported: result });
+  } catch (error) {
+    if (error instanceof KnowledgeValidationError) {
+      return res.status(400).json({ error: error.message });
+    }
+    console.error('Erro ao importar sementes:', error);
+    return res.status(500).json({ error: 'Falha ao gravar as sementes na base privada.' });
   }
 });
 
