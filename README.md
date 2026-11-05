@@ -19,3 +19,15 @@ VITE_API_URL=https://URL-DO-BACKEND npm run build
 ```
 
 Nunca coloque `GEMINI_API_KEY` no frontend, no GitHub Pages ou em arquivos versionados.
+
+
+## Manual de vida — pesquisa e síntese
+
+O trabalho intelectual do Saturnário está organizado em `manual/`. O ponto de entrada atual é o [Mapa geral de perguntas e respostas](manual/MAPA_GERAL_PERGUNTAS_E_RESPOSTAS.md), que reúne perguntas-raiz, perguntas temáticas, respostas provisórias, explicações concorrentes, cruzamentos e fontes iniciais.
+
+Materiais de apoio:
+- [Caderno zero — princípios candidatos](manual/CADERNO_ZERO.md)
+- [Capítulo 1 — Como conhecer sem se enganar](manual/01-COMO-CONHECER.md)
+- [Metodologia de evidências](docs/saturnario/METODOLOGIA.md)
+
+O mapa é uma síntese em evolução: respostas provisórias não são verdades finais, hipóteses permanecem identificadas como hipóteses e lacunas de pesquisa são registradas explicitamente.
