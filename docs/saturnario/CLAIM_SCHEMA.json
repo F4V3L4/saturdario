@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Saturnario Claim",
+  "type": "object",
+  "required": ["id", "statement", "domain", "kind", "status", "created_at"],
+  "properties": {
+    "id": {"type": "string", "minLength": 1},
+    "statement": {"type": "string", "minLength": 10},
+    "domain": {"type": "string"},
+    "kind": {"enum": ["observation", "interpretation", "hypothesis", "causal_claim", "value", "recommendation"]},
+    "status": {"enum": ["draft", "supported", "mixed", "unsupported", "refuted", "withdrawn"]},
+    "scope": {"type": "string"},
+    "sources": {"type": "array", "items": {"type": "object", "required": ["title", "source_type"], "properties": {
+      "id": {"type": "string"}, "title": {"type": "string"},
+      "url": {"type": "string", "format": "uri"},
+      "source_type": {"enum": ["primary", "systematic_review", "review", "dataset", "other"]},
+      "accessed_at": {"type": "string", "format": "date"},
+      "relationship": {"enum": ["supports", "challenges", "context"]}
+    }}},
+    "evidence_summary": {"type": "string"},
+    "counterevidence": {"type": "array", "items": {"type": "string"}},
+    "alternatives": {"type": "array", "items": {"type": "string"}},
+    "confidence": {"enum": ["low", "moderate", "high", "not_assessed"]},
+    "review": {"type": "object", "properties": {
+      "reviewer": {"type": "string"}, "reviewed_at": {"type": ["string", "null"], "format": "date"},
+      "notes": {"type": "string"}
+    }},
+    "created_at": {"type": "string", "format": "date"},
+    "updated_at": {"type": "string", "format": "date"},
+    "history": {"type": "array", "items": {"type": "object"}}
+  },
+  "additionalProperties": false
+}
