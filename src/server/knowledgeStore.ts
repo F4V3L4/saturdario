@@ -143,16 +143,22 @@ export async function listKnowledgeRecords(filters: {
   ).sort((a, b) => b.updated_at.localeCompare(a.updated_at));
 }
 
-export async function createKnowledgeRecord(input: CreateRecordInput): Promise<KnowledgeRecord> {
-  const db = await readDatabase();
-  const now = new Date().toISOString();
-  const record: KnowledgeRecord = {
-    id: randomUUID(),
-    ...input,
-    created_at: now,
-    updated_at: now,
-  };
-  db.records.push(record);
-  await writeDatabase(db);
-  return record;
+let mutationQueue: Promise<unknown> = Promise.resolve();
+
+export function createKnowledgeRecord(input: CreateRecordInput): Promise<KnowledgeRecord> {
+  const operation = mutationQueue.then(async () => {
+    const db = await readDatabase();
+    const now = new Date().toISOString();
+    const record: KnowledgeRecord = {
+      id: randomUUID(),
+      ...input,
+      created_at: now,
+      updated_at: now,
+    };
+    db.records.push(record);
+    await writeDatabase(db);
+    return record;
+  });
+  mutationQueue = operation.catch(() => undefined);
+  return operation;
 }
