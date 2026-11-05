@@ -177,8 +177,16 @@ Retorne EXCLUSIVAMENTE um JSON array no formato:
   }
 });
 
-// Private knowledge API. Keep this service behind trusted access controls before public deployment.
-app.get('/api/knowledge/records', async (req: Request, res: Response) => {
+// Private knowledge API: disabled unless an explicit server-side token is configured.
+function requireKnowledgeToken(req: Request, res: Response, next: () => void) {
+  const token = process.env.KNOWLEDGE_API_TOKEN;
+  if (!token) return res.status(503).json({ error: 'Base privada desativada: configure KNOWLEDGE_API_TOKEN.' });
+  if (req.header('Authorization') !== `Bearer ${token}`) {
+    return res.status(401).json({ error: 'Não autorizado.' });
+  }
+  next();
+}
+app.get('/api/knowledge/records', requireKnowledgeToken, async (req: Request, res: Response) => {
   try {
     const records = await listKnowledgeRecords({
       domain: typeof req.query.domain === 'string' ? req.query.domain : undefined,
@@ -192,7 +200,7 @@ app.get('/api/knowledge/records', async (req: Request, res: Response) => {
   }
 });
 
-app.post('/api/knowledge/records', async (req: Request, res: Response) => {
+app.post('/api/knowledge/records', requireKnowledgeToken, async (req: Request, res: Response) => {
   try {
     const input = validateCreateRecord(req.body);
     const record = await createKnowledgeRecord(input);
