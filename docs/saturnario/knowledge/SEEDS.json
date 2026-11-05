@@ -1,0 +1,94 @@
+{
+  "version": "1.0.0",
+  "purpose": "Exemplos públicos e não pessoais para iniciar a investigação. Não são conclusões finais.",
+  "sources": [
+    {
+      "id": "src-nasa-saturn-facts",
+      "title": "Saturn Facts",
+      "source_type": "primary",
+      "author": "NASA",
+      "publisher": "NASA Solar System Exploration",
+      "url": "https://science.nasa.gov/saturn/facts/",
+      "accessed_at": "2026-11-05",
+      "notes": "Fonte institucional para propriedades físicas e contexto da missão; conferir a página e sua atualização ao importar."
+    },
+    {
+      "id": "src-nasa-cassini",
+      "title": "Cassini mission",
+      "source_type": "primary",
+      "author": "NASA",
+      "publisher": "NASA",
+      "url": "https://science.nasa.gov/mission/cassini/",
+      "accessed_at": "2026-11-05",
+      "notes": "Fonte institucional para observações da missão Cassini."
+    }
+  ],
+  "records": [
+    {
+      "id": "q-saturn-physical-influence",
+      "record_type": "question",
+      "title": "Quais influências físicas de Saturno são mensuráveis na Terra?",
+      "body": "Mapear gravitação, dinâmica orbital, magnetosfera e outras interações; quantificar escalas e comparar com outras fontes de influência.",
+      "domain": "astronomy",
+      "status": "exploring",
+      "confidence": "not_assessed",
+      "scope": "Sistema solar e ambiente terrestre",
+      "limitations": "Não pressupor influência direta sobre comportamento ou destino humano.",
+      "sources": [
+        "src-nasa-saturn-facts",
+        "src-nasa-cassini"
+      ]
+    },
+    {
+      "id": "q-saturn-cultural-history",
+      "record_type": "question",
+      "title": "Como Saturno foi interpretado por diferentes culturas?",
+      "body": "Investigar nomes, calendários, observações, divindades, astrologia e filosofia em suas fontes históricas, mantendo as diferenças entre culturas.",
+      "domain": "history",
+      "status": "exploring",
+      "confidence": "not_assessed",
+      "scope": "Tradições documentadas em fontes primárias e estudos históricos",
+      "limitations": "Sem tratar semelhança simbólica como prova de transmissão ou causalidade."
+    },
+    {
+      "id": "h-attention-life",
+      "record_type": "hypothesis",
+      "title": "A gestão da atenção influencia a qualidade das decisões cotidianas",
+      "body": "Hipótese exploratória: reduzir interrupções e definir prioridades pode melhorar a execução de tarefas e a qualidade de algumas decisões.",
+      "domain": "cognition",
+      "status": "draft",
+      "confidence": "not_assessed",
+      "scope": "Tarefas cotidianas; efeito pode variar por pessoa e contexto",
+      "method": "Revisar literatura e desenhar experimentos pessoais de baixo risco",
+      "limitations": "Não generalizar uma experiência individual; definir métricas e considerar sono, carga de trabalho e ambiente."
+    },
+    {
+      "id": "h-feedback-learning",
+      "record_type": "hypothesis",
+      "title": "Ciclos curtos de prática e feedback podem acelerar a aprendizagem",
+      "body": "Hipótese exploratória: prática deliberada, feedback específico e revisão espaçada podem favorecer retenção e desempenho em certas habilidades.",
+      "domain": "learning",
+      "status": "draft",
+      "confidence": "not_assessed",
+      "scope": "Aprendizagem de habilidades e conhecimentos",
+      "method": "Comparar estratégias de estudo com medidas pré-definidas e tarefas equivalentes",
+      "limitations": "Resultados dependem do domínio, qualidade do feedback, tempo e conhecimento prévio."
+    },
+    {
+      "id": "p-uncertainty-decisions",
+      "record_type": "principle",
+      "title": "Declare a incerteza antes de decidir",
+      "body": "Princípio candidato: diferencie o que observou, o que inferiu e o que ainda não sabe; escolha ações proporcionais ao risco e atualize a decisão com novas informações.",
+      "domain": "decision_making",
+      "status": "draft",
+      "confidence": "not_assessed",
+      "scope": "Decisões cotidianas e profissionais",
+      "limitations": "Não substitui aconselhamento especializado em decisões médicas, jurídicas ou financeiras.",
+      "method": "Revisão de literatura de julgamento, decisão e calibração",
+      "metadata": {
+        "origin": "sintese_inicial",
+        "requires_review": true
+      }
+    }
+  ]
+}
