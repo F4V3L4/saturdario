@@ -198,7 +198,7 @@ export async function importKnowledgeSeeds(input: unknown): Promise<{ sources_ad
   const validSources = seeds.sources.map((source) => {
     if (!source || typeof source !== 'object' || typeof source.id !== 'string' ||
         typeof source.title !== 'string' || typeof source.source_type !== 'string' ||
-        typeof source.url !== 'string' || !/^https?:\\/\\//i.test(source.url)) {
+        typeof source.url !== 'string' || !/^https?:\/\//i.test(source.url)) {
       throw new KnowledgeValidationError('Cada fonte precisa de id, título, tipo e URL HTTP(S) válidos.');
     }
     if (sourceIds.has(source.id)) throw new KnowledgeValidationError(`ID de fonte duplicado: ${source.id}`);
